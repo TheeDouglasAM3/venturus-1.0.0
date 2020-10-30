@@ -1,10 +1,12 @@
 import React, { ReactElement } from 'react'
-import './App.css'
+import Routes from './routes'
+import GlobalStyle from './styles/global'
 
 const App = (): ReactElement => (
-  <div className="App">
-    ola
-  </div>
+  <>
+    <GlobalStyle />
+    <Routes />
+  </>
 )
 
 export default App
