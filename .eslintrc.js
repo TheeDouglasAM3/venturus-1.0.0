@@ -25,7 +25,9 @@ module.exports = {
   rules: {
     semi: [2, 'never'],
     'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx', '.ts', '.tsx', '.css'] }],
+    'import/no-unresolved': [2, { ignore: ['.png$', '.webp$', '.jpg$'] }],
     'import/extensions': 'off',
+    'import/prefer-default-export': 'off',
   },
   settings: {
     'import/resolver': {
