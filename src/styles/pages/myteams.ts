@@ -5,7 +5,7 @@ import bgFootball from '../../images/bgfootball.png'
 export const Container = styled.main`
   #page-my-teams {
     width: 100vw;
-    height: 100vh;
+    height: auto;
     padding: 5.4rem 1.8rem 0rem 1.8rem; 
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -124,5 +124,21 @@ export const Container = styled.main`
     font-size: 1.6rem;
     vertical-align: top;
     border-bottom: solid 2px #FFF;
+  }
+
+  @media (max-width: 1000px) {
+    #page-my-teams {
+      grid-template-columns: 1fr;
+      grid-template-areas: 
+        "myteams"
+        "stats"
+        "footer"
+      ;
+    }
+
+    #page-my-teams #my-teams {
+      margin-bottom: 1.8rem;
+      min-height: 22rem;
+    }
   }
 `
