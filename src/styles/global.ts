@@ -6,10 +6,17 @@ export default createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
   }
+
+  hr {
+    background-color: #F2F2F2; 
+    height: 0.16rem; 
+    border: 0; 
+  }
   
   body {
     color: #0A0A0A;
     background: #F2F2F2;
+    overflow-x: hidden;
   }
 
   body, input, button, textarea {
@@ -19,4 +26,18 @@ export default createGlobalStyle`
   a { 
     text-decoration: none;
   }
+
+  ul {
+    list-style:none;
+  }
+
+  ul, li {
+      margin: 0;
+      padding: 0;
+  }
+
+  #root {
+  display: flex;
+  justify-content: center;
+}
 `
