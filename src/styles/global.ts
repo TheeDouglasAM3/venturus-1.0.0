@@ -39,9 +39,4 @@ export default createGlobalStyle`
       margin: 0;
       padding: 0;
   }
-
-  #root {
-  display: flex;
-  justify-content: center;
-}
 `
