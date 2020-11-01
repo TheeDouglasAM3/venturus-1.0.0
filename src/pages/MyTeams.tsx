@@ -20,7 +20,7 @@ const MyTeams = (): ReactElement => (
 
           <header>
             <h2>My Teams</h2>
-            <Link to="/">
+            <Link to="/manage-team">
               <FiPlus size={24} color="#FFF" />
             </Link>
           </header>
