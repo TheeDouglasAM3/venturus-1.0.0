@@ -12,7 +12,7 @@ export const Container = styled.div`
   #average-age-area li div{
     background: #FFF;
     margin: 0.2rem;
-    padding: 0.4rem 0rem 0.4rem 0rem;
+    padding: 0.8rem 0.4rem 0.8rem 0.4rem;
     border-radius: 0.8rem;
     border: solid 1px #FFF;
     
