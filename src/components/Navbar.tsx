@@ -1,4 +1,5 @@
 import React, { ReactElement } from 'react'
+import { Link } from 'react-router-dom'
 import { getNameInitials } from '../utils/getNameInitials'
 
 import { Container } from '../styles/components/navbar'
@@ -13,7 +14,9 @@ const Navbar = (): ReactElement => {
     <Container>
       <nav>
         <div className="project-name">
-          <img src={icon} alt="logo" />
+          <Link to="/">
+            <img src={icon} alt="logo" />
+          </Link>
           <span>Squad Management Tool</span>
         </div>
         <div className="user-profile">
