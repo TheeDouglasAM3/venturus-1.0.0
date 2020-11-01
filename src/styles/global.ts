@@ -7,6 +7,10 @@ export default createGlobalStyle`
     box-sizing: border-box;
   }
 
+  html { 
+    overflow-x: hidden;
+  }
+
   hr {
     background-color: #F2F2F2; 
     height: 0.16rem; 
@@ -16,7 +20,7 @@ export default createGlobalStyle`
   body {
     color: #0A0A0A;
     background: #F2F2F2;
-    overflow-x: hidden;
+    position: relative
   }
 
   body, input, button, textarea {

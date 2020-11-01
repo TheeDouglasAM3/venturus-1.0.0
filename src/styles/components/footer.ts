@@ -9,9 +9,16 @@ export const Container = styled.div`
     padding: 0.8rem;
     margin-top: 1.2rem;
     background: #E9E9E9;
-    text-align: center;
     font-size: 1.0rem;
-    position: absolute;
+    text-align: center;
+    position:absolute;
     left: 0;
+  }
+
+  @media (max-width: 600px) {
+    footer { 
+      text-align: center;
+      position:relative;
+    }
   }
 `

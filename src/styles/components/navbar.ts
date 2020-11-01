@@ -45,4 +45,10 @@ export const Container = styled.div`
     text-align: center;
     line-height: 2.8rem;
   }
+
+  @media (max-width: 600px) {
+    nav {
+      width: 100%;  
+    }
+  }
 `

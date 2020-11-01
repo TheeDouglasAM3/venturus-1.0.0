@@ -141,4 +141,19 @@ export const Container = styled.main`
       min-height: 22rem;
     }
   }
+
+  @media (max-width: 600px) {
+    #page-my-teams {
+      padding: 5.4rem 1.0rem 0rem 1.0rem; 
+    }
+
+    #page-my-teams #my-teams,
+    #page-my-teams #stats { 
+      width: 96%;
+    }
+
+    #page-my-teams #stats #player-stats .picked-player h3 {
+      font-size:1.2rem;
+    }
+  }
 `

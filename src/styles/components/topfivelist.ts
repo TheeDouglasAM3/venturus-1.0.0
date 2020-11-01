@@ -12,7 +12,7 @@ export const Container = styled.div`
   #average-age-area li div{
     background: #FFF;
     margin: 0.2rem;
-    padding: 0.8rem;
+    padding: 0.4rem 0rem 0.4rem 0rem;
     border-radius: 0.8rem;
     border: solid 1px #FFF;
     
@@ -41,5 +41,15 @@ export const Container = styled.div`
 
   .highlight {
     border: solid 1px #f2295b !important;
+  }
+
+  @media (max-width: 600px) {
+    #average-age-area {
+      flex-wrap:wrap;
+    }
+
+    #average-age-area #lowest-avg-age{
+      margin-top: 1.2rem;
+    }
   }
 `
