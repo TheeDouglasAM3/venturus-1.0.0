@@ -1,5 +1,8 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import React, { ReactElement, useState } from 'react'
+import React, {
+  ReactElement, useState, useEffect, ChangeEvent,
+} from 'react'
+import getPlayersFromApi from '../services/apiFootball'
 
 import Navbar from '../components/Navbar'
 import TagInput from '../components/TagInput'
@@ -7,8 +10,29 @@ import Footer from '../components/Footer'
 
 import { Container } from '../styles/pages/manageteam'
 
+interface Player {
+  name: string,
+  nacionality: string,
+  age: number
+}
+
 const ManageTeam = (): ReactElement => {
-  const [tags, setTags] = useState(['example tag'])
+  const [playerNameToFind, setPlayerNameToFind] = useState('')
+  const [searchPlayers, setSearchPlayers] = useState<Player[]>([])
+
+  useEffect(() => {
+    async function renderPlayersSearched() {
+      if (playerNameToFind.length >= 4) {
+        const playersFound = await getPlayersFromApi(playerNameToFind)
+        setSearchPlayers([])
+        setSearchPlayers(playersFound)
+      } else {
+        setSearchPlayers([])
+      }
+    }
+
+    renderPlayersSearched()
+  }, [playerNameToFind])
 
   return (
     <>
@@ -51,7 +75,7 @@ const ManageTeam = (): ReactElement => {
                       <label htmlFor="real" id="first-radio">Real</label>
                     </div>
                     <div className="radio-line">
-                      <input type="radio" id="fantasy" name="typeTeam" value="fantasy" checked />
+                      <input type="radio" id="fantasy" name="typeTeam" value="fantasy" />
                       <label htmlFor="fantasy">Fantasy</label>
                     </div>
                   </div>
@@ -89,9 +113,9 @@ const ManageTeam = (): ReactElement => {
                     <span>+ </span>
                     <span>+ </span>
                     <span>+ </span>
+                    <span className="hide-circle">+ </span>
                     <span>+ </span>
-                    <span>+ </span>
-                    <span>+ </span>
+                    <span className="hide-circle">+ </span>
                     <span>+ </span>
                     <span>+ </span>
                     <span>+ </span>
@@ -106,24 +130,34 @@ const ManageTeam = (): ReactElement => {
                 <div className="fields-area">
                   <span className="form-field-name">Search Players</span>
                   <label htmlFor="player-name">
-                    <input type="text" id="player-name" name="playerName" placeholder="Insert player name" />
+                    <input
+                      type="text"
+                      id="player-name"
+                      name="playerName"
+                      placeholder="Insert player name"
+                      onChange={(event) => setPlayerNameToFind(event.currentTarget.value)}
+                      value={playerNameToFind}
+                    />
                   </label>
 
                   <div id="players-list">
-                    <div className="player-info">
-                      <div className="info-left">
-                        <strong>Name: </strong>
-                        <span>Cristiano Ronaldo</span>
-                        <br />
-                        <strong>Nacionality: </strong>
-                        <span>Portugal</span>
+                    {searchPlayers.map((player: Player) => (
+                      <div className="player-info" key={`${player.name}-${player.nacionality}`}>
+                        <div className="info-left">
+                          <strong>Name: </strong>
+                          <span>{player.name}</span>
+                          <br />
+                          <strong>Nacionality: </strong>
+                          <span>{player.nacionality || '--'}</span>
+                        </div>
+                        <div className="info-right">
+                          <strong>Age: </strong>
+                          <span>{player.age || '--'}</span>
+                        </div>
                       </div>
-                      <div className="info-right">
-                        <strong>Age: </strong>
-                        <span>32</span>
-                      </div>
-                    </div>
+                    ))}
                   </div>
+
                 </div>
               </div>
             </section>
