@@ -23,6 +23,28 @@ const TableMyTeams = (): ReactElement => (
             </div>
           </td>
         </tr>
+        <tr>
+          <td>John Lennon</td>
+          <td className="description">
+            <span>Rhythm Guitar</span>
+            <div className="action-buttons">
+              <FiEdit size={16} />
+              <FiShare2 size={16} />
+              <FiTrash size={16} />
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>John Lennon</td>
+          <td className="description">
+            <span>Rhythm Guitar</span>
+            <div className="action-buttons">
+              <FiEdit size={16} />
+              <FiShare2 size={16} />
+              <FiTrash size={16} />
+            </div>
+          </td>
+        </tr>
       </tbody>
     </table>
   </Container>
