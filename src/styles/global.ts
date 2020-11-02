@@ -20,7 +20,7 @@ export default createGlobalStyle`
   body {
     color: #0A0A0A;
     background: #F2F2F2;
-    position: relative
+    position: relative;
   }
 
   body, input, button, textarea {
