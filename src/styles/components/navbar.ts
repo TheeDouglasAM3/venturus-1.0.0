@@ -13,6 +13,7 @@ export const Container = styled.div`
     align-items: center;
 
     position: fixed;
+    z-index: 1;
   }
 
   nav .project-name {
