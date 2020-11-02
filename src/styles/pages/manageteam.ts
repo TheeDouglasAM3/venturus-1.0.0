@@ -190,4 +190,19 @@ export const Container = styled.main`
   #players-list .player-info span {
     color: #f2295b;
   }
+
+  @media (max-width: 1000px) {
+    .form-div {
+      display:flex;
+      flex-direction: column;
+      padding: 0rem 1.2rem 0rem 1.2rem;
+    }
+
+    .form-div .fields-area{
+      width: 100%;
+      display:flex;
+      flex-direction:column;
+    }
+
+  }
 `
