@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import bgFootball from '../../images/bgfootball.png'
+import bgFootball from '../../images/bgfootbally.png'
 
 export const Container = styled.main`
   #page-my-teams {
