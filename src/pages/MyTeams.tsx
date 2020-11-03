@@ -1,11 +1,11 @@
 import React, { ReactElement } from 'react'
 import { Link } from 'react-router-dom'
 import { FiPlus } from 'react-icons/fi'
-import { getNameInitials } from '../utils/getNameInitials'
 
 import Navbar from '../components/Navbar'
 import TableMyTeams from '../components/TableMyTeams'
 import TopFiveList from '../components/TopFiveList'
+import PlayersStats from '../components/PlayersStats'
 import Footer from '../components/Footer'
 
 import { Container } from '../styles/pages/myteams'
@@ -38,38 +38,7 @@ const MyTeams = (): ReactElement => (
             <TopFiveList />
           </div>
 
-          <div id="player-stats">
-
-            <div className="picked-player">
-              <h3>Most picked player</h3>
-              <div className="player-area">
-
-                <div className="player-display">
-                  <span>{getNameInitials('Cristiano Ronaldo')}</span>
-                </div>
-
-                <div className="player-percentage">
-                  <span>75%</span>
-                </div>
-
-              </div>
-            </div>
-
-            <div className="picked-player">
-              <h3>Less picked player</h3>
-              <div className="player-area">
-
-                <div className="player-display">
-                  <span>{getNameInitials('Ronaldo Luiz de Alves')}</span>
-                </div>
-
-                <div className="player-percentage">
-                  <span>25%</span>
-                </div>
-
-              </div>
-            </div>
-          </div>
+          <PlayersStats />
         </section>
         <Footer />
       </div>
