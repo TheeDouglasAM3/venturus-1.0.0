@@ -3,6 +3,7 @@ import React, {
   ReactElement, useState, useEffect, FormEvent,
 } from 'react'
 import { useHistory } from 'react-router-dom'
+import { v4 as uuidv4 } from 'uuid'
 import ReactTagInput from '@pathofdev/react-tag-input'
 import getPlayersFromApi from '../services/apiFootball'
 
@@ -24,11 +25,12 @@ interface Player {
 }
 
 interface Team {
+  id: string
   name: string,
-  description: string,
+  description?: string,
   website: string,
   teamType: string,
-  tags: string[],
+  tags?: string[],
   formation: string,
   teamPlayers: Player[]
 }
@@ -66,6 +68,7 @@ const ManageTeam = (): ReactElement => {
     if (teamValidation(name, website, teamPlayers.length)) {
       event.preventDefault()
       const team: Team = {
+        id: uuidv4(),
         name,
         description,
         website,
@@ -239,18 +242,20 @@ const ManageTeam = (): ReactElement => {
                           return (
                             <>
                               <span
+                                key={uuidv4()}
                                 onClick={() => handleRemovePlayer(teamPlayers[i])}
                                 role="button"
                                 aria-hidden
                               >
                                 {teamPlayers[i] ? getNameInitials(teamPlayers[i].name) : '+'}
                               </span>
-                              <span className="hide-circle">+</span>
+                              <span key={uuidv4()} className="hide-circle">+</span>
                             </>
                           )
                         }
                         return (
                           <span
+                            key={uuidv4()}
                             onClick={() => handleRemovePlayer(teamPlayers[i])}
                             role="button"
                             aria-hidden
@@ -261,7 +266,7 @@ const ManageTeam = (): ReactElement => {
                       })}
                     </div>
                     {
-                    (!teamValidation(name, website, teamPlayers.length))
+                    (teamValidation(name, website, teamPlayers.length))
                     && (
                     <button type="submit" onClick={(event) => handleTeamSave(event)}>
                       Save
@@ -287,7 +292,7 @@ const ManageTeam = (): ReactElement => {
                       {searchPlayers.map((player: Player) => (
                         <div
                           className="player-info"
-                          key={`${player.name}-${player.nacionality}`}
+                          key={`${player.name}-${uuidv4()}`}
                           onClick={() => handleSavePlayer(player)}
                           role="button"
                           aria-hidden
