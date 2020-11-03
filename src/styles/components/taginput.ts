@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const Container = styled.div`
+export const TagInputContainer = styled.div`
   .react-tag-input {
     background: white;
     color: #333;
