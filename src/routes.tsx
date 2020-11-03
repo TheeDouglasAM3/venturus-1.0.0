@@ -8,7 +8,7 @@ const Routes = (): ReactElement => (
   <BrowserRouter>
     <Switch>
       <Route path="/" component={MyTeams} exact />
-      <Route path="/manage-team" component={ManageTeam} />
+      <Route path="/manage-team/:id?" component={ManageTeam} />
     </Switch>
   </BrowserRouter>
 )
