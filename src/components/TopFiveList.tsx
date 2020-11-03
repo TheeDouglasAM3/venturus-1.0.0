@@ -1,6 +1,7 @@
 import React, {
   FormEvent, ReactElement, useEffect, useState,
 } from 'react'
+import { v4 as uuidv4 } from 'uuid'
 import { Container } from '../styles/components/topfivelist'
 
 interface TopFiveTeam {
@@ -85,7 +86,7 @@ const TopFiveList = (): ReactElement => {
             {highestTeams.map((team: TopFiveTeam) => (
               <li>
                 <div
-                  key={`${team.name}-hg`}
+                  key={`${team.name}-${uuidv4()}`}
                   onClick={(event) => handleFocusTopTeam(event, 'highest-team')}
                   role="button"
                   aria-hidden
@@ -105,7 +106,7 @@ const TopFiveList = (): ReactElement => {
             {lowestTeams.map((team: TopFiveTeam) => (
               <li>
                 <div
-                  key={`${team.name}-lw`}
+                  key={`${team.name}-${uuidv4()}`}
                   onClick={(event) => handleFocusTopTeam(event, 'lowest-team')}
                   role="button"
                   aria-hidden
