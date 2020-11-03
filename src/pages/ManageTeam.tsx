@@ -39,6 +39,7 @@ const ManageTeam = (): ReactElement => {
   const history = useHistory()
 
   const numberOfPlayersInATeam = 11
+  const [formMode, setFormMode] = useState('CREATE_MODE')
   const [name, setName] = useState('')
   const [description, setDescription] = useState('')
   const [website, setWebsite] = useState('')
@@ -49,6 +50,29 @@ const ManageTeam = (): ReactElement => {
 
   const [playerNameToFind, setPlayerNameToFind] = useState('')
   const [searchPlayers, setSearchPlayers] = useState<Player[]>([])
+
+  function fillFieldsWithTeamData(team: Team) {
+    setName(team.name)
+    setDescription(team.description || '')
+    setWebsite(team.website)
+    setTeamType(team.teamType)
+    setTags(team.tags || [])
+    setFormation(team.formation)
+    setTeamPlayers(team.teamPlayers)
+    setFormMode('UPDATE_MODE')
+  }
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.pathname)
+    const idTeam = params.toString().replace('%2Fmanage-team%2F', ' ').replace('=', '').trim()
+    const teams: Team[] = JSON.parse(localStorage.getItem('teams') || '[]')
+
+    if (teams) {
+      teams.forEach((team: Team) => {
+        if (team.id.localeCompare(idTeam) === 0) fillFieldsWithTeamData(team)
+      })
+    }
+  }, [])
 
   useEffect(() => {
     async function renderPlayersSearched() {
@@ -77,15 +101,23 @@ const ManageTeam = (): ReactElement => {
         formation,
         teamPlayers,
       }
-      console.log(`${JSON.stringify(team)}`)
 
-      let allTeamsAsString: Team[] = []
+      let allTeams: Team[] = []
 
-      allTeamsAsString.push(team)
-      allTeamsAsString = allTeamsAsString.concat(JSON.parse(localStorage.getItem('teams') || '[]'))
+      if (formMode.localeCompare('CREATE_MODE') === 0) {
+        allTeams.push(team)
+        allTeams = allTeams.concat(JSON.parse(localStorage.getItem('teams') || '[]'))
+      } else if (formMode.localeCompare('UPDATE_MODE') === 0) {
+        const params = new URLSearchParams(window.location.pathname)
+        const idTeam = params.toString().replace('%2Fmanage-team%2F', ' ').replace('=', '').trim()
+        allTeams = JSON.parse(localStorage.getItem('teams') || '[]')
+        allTeams = allTeams.map((teamUpdate: Team) => {
+          if (teamUpdate.id.localeCompare(idTeam) === 0) return team
+          return teamUpdate
+        })
+      }
 
-      localStorage.setItem('teams', JSON.stringify(allTeamsAsString))
-
+      localStorage.setItem('teams', JSON.stringify(allTeams))
       history.push('/')
     }
   }
@@ -153,9 +185,8 @@ const ManageTeam = (): ReactElement => {
                         id="description"
                         name="description"
                         onChange={(event) => setDescription(event.currentTarget.value)}
-                      >
-                        {description}
-                      </textarea>
+                        value={description}
+                      />
                     </label>
                   </div>
 
@@ -240,22 +271,21 @@ const ManageTeam = (): ReactElement => {
                       {[...Array(11)].map((x: number, i: number) => {
                         if (i === 2 || i === 3 || i === 9 || i === 10) {
                           return (
-                            <>
+                            <React.Fragment key={`${uuidv4()}`}>
                               <span
-                                key={uuidv4()}
                                 onClick={() => handleRemovePlayer(teamPlayers[i])}
                                 role="button"
                                 aria-hidden
                               >
                                 {teamPlayers[i] ? getNameInitials(teamPlayers[i].name) : '+'}
                               </span>
-                              <span key={uuidv4()} className="hide-circle">+</span>
-                            </>
+                              <span key={`${uuidv4()}`} className="hide-circle">+</span>
+                            </React.Fragment>
                           )
                         }
                         return (
                           <span
-                            key={uuidv4()}
+                            key={`${uuidv4()}`}
                             onClick={() => handleRemovePlayer(teamPlayers[i])}
                             role="button"
                             aria-hidden
