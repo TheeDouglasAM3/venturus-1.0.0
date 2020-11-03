@@ -77,7 +77,7 @@ export const Container = styled.main`
   #position-players {
     width: 24rem;
     height: 36rem;
-    margin-bottom: 1.8rem;
+    margin-bottom: 1.2rem;
     border-radius: 1rem;
 
     background-image: url('${bgFootball}'), linear-gradient(180deg, #bf34b1 0%, #532d8c 100%);
@@ -107,6 +107,12 @@ export const Container = styled.main`
     display: flex;
     justify-content: center;
     align-items: center;
+
+    cursor: pointer;
+  }
+
+  #position-players span:hover{
+    background: rgba(255, 61, 61, 0.6);
   }
 
   h3 {
@@ -136,6 +142,23 @@ export const Container = styled.main`
     border: solid 2px #f2295b;
     outline: none;
     box-shadow: none;
+  }
+
+  button[type="submit"] {
+    background: linear-gradient(180deg, #bf34b1 0%, #532d8c 100%);
+    border: none;
+    width: 24rem;
+    color: #FFF;
+    padding: 0.6rem;
+    align-self: center;
+    margin-bottom: 1.8rem;
+    border-radius: 0.4rem;
+
+    cursor: pointer;
+  }
+
+  button[type="submit"]:hover {
+    box-shadow: 3px 11px 16px -10px rgba(0,0,0,0.5);
   }
 
   input[type="text"] {
@@ -181,10 +204,13 @@ export const Container = styled.main`
     padding: 1rem;
     line-height: 2rem;
     border: dashed 2px #CDCDCD;
+    margin-bottom: 1rem;
 
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+
+    cursor: pointer;
   }
 
   #players-list .player-info span {
