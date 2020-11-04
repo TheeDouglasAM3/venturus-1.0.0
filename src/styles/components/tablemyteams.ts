@@ -45,4 +45,8 @@ export const Container = styled.div`
     column-gap: 0.8rem;
     cursor: pointer;
   }
+
+  .hide {
+    visibility: hidden;
+  }
 `
