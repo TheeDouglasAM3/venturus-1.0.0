@@ -15,6 +15,7 @@ export const Container = styled.main`
     display: grid;
     grid-template-columns: 1fr;
     grid-column-gap: 1.6rem;
+    grid-row-gap: 3.2rem;
     grid-template-areas: 
       "form"
       "footer"
