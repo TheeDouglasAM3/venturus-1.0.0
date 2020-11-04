@@ -1,4 +1,7 @@
+/* eslint-disable import/newline-after-import */
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable camelcase */
+import React from 'react'
 interface PlayerResponse {
   player_name: string,
   birth_country: string,
