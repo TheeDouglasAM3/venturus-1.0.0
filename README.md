@@ -53,6 +53,8 @@ No quarto dia eu me dediquei lendo a documentação api-football, e implementei 
 
 Os últimos dois dias eu me dediquei em salvar os times e mostrar as estatísticas que deveriam de ser exibidas na página inicial. E após essa conclusão, com o tempo restante, eu alterei os estilos de alguns componentes para ficar mais atrativo em versão para dispositivos móveis.
 
+Para futuras implementações, eu adicionaria o sistema de drag and drops de jogadores ao criar o time, junto com a modificação do campo ao alterar a formação, depois implementaria testes para evitar futuros erros caso essa plataforma se expandanda, no caso, tendo o uso de NodeJS para criação de usuários e armazenamentos dos times, e seria interessante trazer essa plataforma para dispositiveis móveis utilizando React Native :)
+
 # Tecnologias
 Neste projeto foram utilizadas as seguintes tecnologias:
 * [React](https://pt-br.reactjs.org/)
