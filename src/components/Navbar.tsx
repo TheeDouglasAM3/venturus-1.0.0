@@ -7,8 +7,8 @@ import { Container } from '../styles/components/navbar'
 import icon from '../images/icon.png'
 
 const Navbar = (): ReactElement => {
-  const firstName = 'John'
-  const lastName = 'Doe'
+  const firstName = 'Douglas'
+  const lastName = 'Marcelino'
 
   return (
     <Container>
