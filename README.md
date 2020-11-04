@@ -38,6 +38,8 @@ Squad Management Tool é uma plataforma que orienta os usuários na criação e 
 O projeto desenvolvido neste repositório está disponível em: 
 [https://theedouglas-venturus.vercel.app/](https://theedouglas-venturus.vercel.app/)
 
+OBS.: A versão gratuita da api-football só permite 100 requisições diárias, logo se em algum momento a aplicação não exibir a lista de jogadores, deve-se trocar o token ou esperar o dia seguinte para a utilização da mesma
+
 # Minhas Etapas
 Para preparar o projeto, eu optei por utilizar o Typescript junto com o React, para facilitar no desenvolvimento com as tipagens dos objetos.
 
