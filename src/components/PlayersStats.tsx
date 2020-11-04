@@ -84,12 +84,12 @@ const PlayersStats = (): ReactElement => {
           <div className="player-area">
 
             <div className="player-display">
-              <span>{getNameInitials(mostPickedPlayer.name)}</span>
+              <span>{mostPickedPlayer && getNameInitials(mostPickedPlayer.name)}</span>
             </div>
 
             <div className="player-percentage">
               <span>
-                {mostPickedPlayer.percentage}
+                {mostPickedPlayer && mostPickedPlayer.percentage}
                 %
               </span>
             </div>
@@ -102,12 +102,12 @@ const PlayersStats = (): ReactElement => {
           <div className="player-area">
 
             <div className="player-display">
-              <span>{getNameInitials(lessPickedPlayer.name)}</span>
+              <span>{lessPickedPlayer && getNameInitials(lessPickedPlayer.name)}</span>
             </div>
 
             <div className="player-percentage">
               <span>
-                {lessPickedPlayer.percentage}
+                {lessPickedPlayer && lessPickedPlayer.percentage}
                 %
               </span>
             </div>
