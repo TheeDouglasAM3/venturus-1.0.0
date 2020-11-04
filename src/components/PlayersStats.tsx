@@ -1,27 +1,14 @@
 import React, { ReactElement, useEffect, useState } from 'react'
 import { getNameInitials } from '../utils/getNameInitials'
+
 import { Container } from '../styles/components/playersstats'
+
+import { Player } from '../interfaces/Player'
+import { Team } from '../interfaces/Team'
 
 interface PickedPlayer {
   name: string,
   percentage: number,
-}
-
-interface Player {
-  name: string,
-  nacionality: string,
-  age: number
-}
-
-interface Team {
-  id: string
-  name: string,
-  description?: string,
-  website: string,
-  teamType: string,
-  tags?: string[],
-  formation: string,
-  teamPlayers: Player[]
 }
 
 const PlayersStats = (): ReactElement => {

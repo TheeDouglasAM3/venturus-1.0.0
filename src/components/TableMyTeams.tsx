@@ -4,24 +4,10 @@ import React, {
 import { FiEdit, FiShare2, FiTrash } from 'react-icons/fi'
 import { Link, useHistory } from 'react-router-dom'
 import { v4 as uuidv4 } from 'uuid'
+
 import { Container } from '../styles/components/tablemyteams'
 
-interface Player {
-  name: string,
-  nacionality: string,
-  age: number
-}
-
-interface Team {
-  id: string
-  name: string,
-  description?: string,
-  website: string,
-  teamType: string,
-  tags?: string[],
-  formation: string,
-  teamPlayers: Player[]
-}
+import { Team } from '../interfaces/Team'
 
 const TableMyTeams = (): ReactElement => {
   const history = useHistory()

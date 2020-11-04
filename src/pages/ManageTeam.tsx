@@ -18,22 +18,8 @@ import { Container } from '../styles/pages/manageteam'
 import { TagInputContainer } from '../styles/components/taginput'
 import '@pathofdev/react-tag-input/build/index.css'
 
-interface Player {
-  name: string,
-  nacionality: string,
-  age: number
-}
-
-interface Team {
-  id: string
-  name: string,
-  description?: string,
-  website: string,
-  teamType: string,
-  tags?: string[],
-  formation: string,
-  teamPlayers: Player[]
-}
+import { Player } from '../interfaces/Player'
+import { Team } from '../interfaces/Team'
 
 const ManageTeam = (): ReactElement => {
   const history = useHistory()

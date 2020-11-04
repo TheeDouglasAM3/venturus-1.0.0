@@ -2,28 +2,15 @@ import React, {
   FormEvent, ReactElement, useEffect, useState,
 } from 'react'
 import { v4 as uuidv4 } from 'uuid'
+
 import { Container } from '../styles/components/topfivelist'
+
+import { Player } from '../interfaces/Player'
+import { Team } from '../interfaces/Team'
 
 interface TopFiveTeam {
   name: string,
   avgAge: number
-}
-
-interface Player {
-  name: string,
-  nacionality: string,
-  age: number
-}
-
-interface Team {
-  id: string
-  name: string,
-  description?: string,
-  website: string,
-  teamType: string,
-  tags?: string[],
-  formation: string,
-  teamPlayers: Player[]
 }
 
 const TopFiveList = (): ReactElement => {
