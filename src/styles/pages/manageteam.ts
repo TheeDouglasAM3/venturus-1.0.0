@@ -77,7 +77,7 @@ export const Container = styled.main`
   #position-players {
     width: 24rem;
     height: 36rem;
-    margin-bottom: 1.2rem;
+    margin-bottom: 2rem;
     border-radius: 1rem;
 
     background-image: url('${bgFootball}'), linear-gradient(180deg, #bf34b1 0%, #532d8c 100%);
@@ -153,6 +153,7 @@ export const Container = styled.main`
     align-self: center;
     margin-bottom: 1.8rem;
     border-radius: 0.4rem;
+    margin-bottom: 6rem;
 
     cursor: pointer;
   }
@@ -230,5 +231,14 @@ export const Container = styled.main`
       flex-direction:column;
     }
 
+  }
+
+  @media (max-width: 600px) {
+    #page-manage-team {
+      padding: 5.4rem 1rem 0rem 1rem; 
+    }
+    #page-manage-team, #page-manage-team #create-your-team {
+      width: 96%;
+    }
   }
 `

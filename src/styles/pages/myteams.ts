@@ -4,6 +4,7 @@ export const Container = styled.main`
   #page-my-teams {
     width: 100vw;
     height: auto;
+    min-height: 100vh;
     padding: 5.4rem 1.8rem 0rem 1.8rem; 
     display: grid;
     grid-template-columns: 1fr 1fr;
