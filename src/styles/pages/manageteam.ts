@@ -236,10 +236,8 @@ export const Container = styled.main`
 
   @media (max-width: 600px) {
     #page-manage-team {
-      padding: 5.4rem 1rem 0rem 1rem; 
-    }
-    #page-manage-team, #page-manage-team #create-your-team {
-      width: 96%;
+      padding: 5.4rem 2rem 0rem 1rem; 
+      grid-row-gap: 1.6rem;
     }
   }
 `

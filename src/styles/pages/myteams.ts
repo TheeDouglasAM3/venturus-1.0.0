@@ -83,6 +83,7 @@ export const Container = styled.main`
   @media (max-width: 600px) {
     #page-my-teams {
       padding: 5.4rem 1.0rem 0rem 1.0rem; 
+      grid-row-gap: 1.6rem;
     }
 
     #page-my-teams #my-teams,
