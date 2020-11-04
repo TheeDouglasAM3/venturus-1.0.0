@@ -13,6 +13,7 @@ export const Container = styled.div`
     text-align: center;
     position:absolute;
     left: 0;
+    bottom: 0;
   }
 
   @media (max-width: 600px) {
